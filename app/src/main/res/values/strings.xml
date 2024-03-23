@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Github Catalog</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="searchbar_hint"> Cari username Github </string>
+    <string name="title_search"> Cari username Github! </string>
+    <string name="empty_view">Tidak ada user yang ditemukan.</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+</resources>
