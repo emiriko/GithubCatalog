@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.example.githubcatalog.data.response.SearchResponse
 import com.example.githubcatalog.data.retrofit.APIConfig
 import com.example.githubcatalog.utils.Event
-import kotlinx.coroutines.delay
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,12 +20,15 @@ class HomeViewModel : ViewModel() {
 
     private val _snackbarText = MutableLiveData<Event<String>>()
     val snackbarText: LiveData<Event<String>> = _snackbarText
-    
+
     fun searchUser(query: String) {
         _isLoading.value = true
         val client = APIConfig.getApiService().searchUsers(query)
         client.enqueue(object : Callback<SearchResponse> {
-            override fun onResponse(call: Call<SearchResponse>, response: Response<SearchResponse>) {
+            override fun onResponse(
+                call: Call<SearchResponse>,
+                response: Response<SearchResponse>
+            ) {
                 if (response.isSuccessful) {
                     _isLoading.value = false
                     _result.value = response.body()

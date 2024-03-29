@@ -24,24 +24,24 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val mainViewModel by viewModels<HomeViewModel>()
-    
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        
+
         val root: View = binding.root
 
         activity?.findViewById<TextView>(R.id.tvTitle)?.setText(R.string.title_home)
 
         return root
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
         val layoutManager = LinearLayoutManager(context)
         binding.recyclerView.layoutManager = layoutManager
         val itemDecoration = DividerItemDecoration(context, layoutManager.orientation)
@@ -57,21 +57,21 @@ class HomeFragment : Fragment() {
             binding.recyclerView.visibility = if (it) View.GONE else View.VISIBLE
             binding.emptyView.visibility = if (it) View.GONE else View.VISIBLE
         }
-        
+
         mainViewModel.snackbarText.observe(viewLifecycleOwner) {
             it.getContentIfNotHandled()?.let { message ->
                 Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
             }
         }
-        
+
         with(binding) {
-            searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     mainViewModel.searchUser(query ?: "")
 
                     // Clear focus to close the keyboard
                     searchView.clearFocus()
-                    
+
                     return true
                 }
 
@@ -81,12 +81,12 @@ class HomeFragment : Fragment() {
             })
         }
     }
-    
+
     private fun setAdapter(items: List<ItemsItem>) {
         val adapter = ResultAdapter()
         adapter.submitList(items)
         binding.recyclerView.adapter = adapter
-        
+
         adapter.setOnItemClickCallback(object : ResultAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ItemsItem) {
                 Log.d("HomeFragment", "onItemClicked: ${data.login}")
@@ -94,19 +94,23 @@ class HomeFragment : Fragment() {
 
                 val bundle = Bundle()
                 bundle.putString(DetailProfileFragment.USERNAME, data.login)
-                
+
                 detailProfileFragment.arguments = bundle
-                
+
                 val fragmentManager = activity?.supportFragmentManager
-                
-                fragmentManager?.commit { 
-                    replace(R.id.container, detailProfileFragment, DetailProfileFragment::class.java.simpleName)
+
+                fragmentManager?.commit {
+                    replace(
+                        R.id.container,
+                        detailProfileFragment,
+                        DetailProfileFragment::class.java.simpleName
+                    )
                     addToBackStack(null)
                 }
             }
         })
     }
-    
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

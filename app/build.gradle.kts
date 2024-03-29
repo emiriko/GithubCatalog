@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.example.githubcatalog"
     compileSdk = 34
-    
+
     defaultConfig {
         applicationId = "com.example.githubcatalog"
         minSdk = 24
@@ -15,9 +15,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        
+
         buildConfigField("String", "API_BASE_URL", "\"https://api.github.com\"")
-        buildConfigField("String", "GITHUB_TOKEN", "\"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\"")
+        buildConfigField(
+            "String",
+            "GITHUB_TOKEN",
+            "\"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\""
+        )
     }
 
     buildTypes {

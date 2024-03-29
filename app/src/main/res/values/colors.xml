@@ -8,11 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#121212</color>
-    <color name ="colorPrimaryVariant">#e2eaf5</color>
-    <color name ="colorOnPrimary">#13448f</color>
-    <color name = "bottomNavBackground">#1f2024</color>
-    <color name = "bottomNavIconColor">#dfdfe1</color>
-    <color name = "bottomNavIconColorSelected">#e2e9f7</color>
-    <color name = "itemHoverColor">#13448f</color>
-    <color name = "bottomNavTextColor">#e9eaed</color>
+    <color name="colorOnPrimary">#13448f</color>
+    <color name="bottomNavBackground">#1f2024</color>
+    <color name="bottomNavIconColor">#dfdfe1</color>
+    <color name="bottomNavIconColorSelected">#e2e9f7</color>
+    <color name="itemHoverColor">#13448f</color>
+    <color name="bottomNavTextColor">#e9eaed</color>
+
+    <color name="queen_blue">#F8F0E5</color>
+    <color name="polished_pine">#EADBC8</color>
+    <color name="eton_blue">#DAC0A3</color>
+    <color name="pale_spring">#102C57</color>
 </resources>

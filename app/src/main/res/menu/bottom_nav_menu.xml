@@ -3,12 +3,12 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" 
-        android:color = "@color/colorPrimaryVariant"/>
+        android:title="@string/title_home"
+        android:color="?attr/bottomNavigationStyle" />
 
     <item
         android:id="@+id/navigation_favorites"
         android:icon="@drawable/baseline_bookmarks_24"
         android:title="@string/title_favorites"
-        android:color = "@color/colorPrimaryVariant" />
+        android:color="?attr/bottomNavigationStyle" />
 </menu>

@@ -2,7 +2,6 @@ package com.example.githubcatalog.data.retrofit
 
 import com.example.githubcatalog.BuildConfig
 import okhttp3.Interceptor
-import okhttp3.Interceptor.*
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,9 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class APIConfig {
-    companion object{
+    companion object {
         fun getApiService(): GithubService {
-            val loggingInterceptor = if(BuildConfig.DEBUG) {
+            val loggingInterceptor = if (BuildConfig.DEBUG) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             } else {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)

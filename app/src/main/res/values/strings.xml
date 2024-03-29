@@ -7,4 +7,5 @@
     <string name="empty_view">Tidak ada user yang ditemukan.</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
+    <string name="hello">Hello</string>
 </resources>
