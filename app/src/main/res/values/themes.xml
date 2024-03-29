@@ -6,6 +6,10 @@
         <item name="colorPrimaryVariant">@color/pale_spring</item>
         <item name="colorOnPrimary">@color/eton_blue</item>
         <item name = "colorPrimaryContainer"> @color/queen_blue </item>
+
+        <item name = "colorSecondaryContainer"> @color/colorPrimary </item>
+        
+        <item name = "civ_border_color"> @color/pale_spring </item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/queen_blue</item>
 

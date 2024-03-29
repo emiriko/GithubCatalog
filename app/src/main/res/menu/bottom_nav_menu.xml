@@ -10,5 +10,6 @@
         android:id="@+id/navigation_favorites"
         android:icon="@drawable/baseline_bookmarks_24"
         android:title="@string/title_favorites"
-        android:color="?attr/bottomNavigationStyle" />
+        android:color="?attr/bottomNavigationStyle" 
+        />
 </menu>

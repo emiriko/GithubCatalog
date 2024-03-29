@@ -1,5 +1,6 @@
 package com.example.githubcatalog.ui.home
 
+import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -42,9 +43,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val ATTRS = intArrayOf(android.R.attr.listDivider)
+
+        val a = requireContext().obtainStyledAttributes(ATTRS)
+        val divider = a.getDrawable(0)
+        val inset = resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
+        val insetDivider = InsetDrawable(divider, inset, 16, inset, 16)
+        a.recycle()
+
         val layoutManager = LinearLayoutManager(context)
         binding.recyclerView.layoutManager = layoutManager
-        val itemDecoration = DividerItemDecoration(context, layoutManager.orientation)
+        val itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        itemDecoration.setDrawable(insetDivider)
         binding.recyclerView.addItemDecoration(itemDecoration)
 
         mainViewModel.result.observe(viewLifecycleOwner) {

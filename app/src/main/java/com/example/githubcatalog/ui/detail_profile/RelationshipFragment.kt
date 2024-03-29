@@ -1,5 +1,6 @@
 package com.example.githubcatalog.ui.detail_profile
 
+import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.example.githubcatalog.R
 import com.example.githubcatalog.data.response.ItemsItem
 import com.example.githubcatalog.databinding.FragmentRelationshipBinding
 import com.example.githubcatalog.ui.home.ResultAdapter
+
 
 class RelationshipFragment : Fragment() {
     companion object {
@@ -49,9 +51,18 @@ class RelationshipFragment : Fragment() {
         Log.d("RelationshipFragment", "onViewCreated: $username $action")
         detailViewModel.getRelationship(username, action)
 
+        val ATTRS = intArrayOf(android.R.attr.listDivider)
+
+        val a = requireContext().obtainStyledAttributes(ATTRS)
+        val divider = a.getDrawable(0)
+        val inset = resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
+        val insetDivider = InsetDrawable(divider, inset, 16, inset, 16)
+        a.recycle()
+        
         val layoutManager = LinearLayoutManager(context)
         binding.recyclerViewRelationship.layoutManager = layoutManager
-        val itemDecoration = DividerItemDecoration(context, layoutManager.orientation)
+        val itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        itemDecoration.setDrawable(insetDivider)
         binding.recyclerViewRelationship.addItemDecoration(itemDecoration)
 
         detailViewModel.relationship.observe(viewLifecycleOwner) {

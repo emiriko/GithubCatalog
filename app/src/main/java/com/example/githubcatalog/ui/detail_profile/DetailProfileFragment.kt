@@ -1,6 +1,8 @@
 package com.example.githubcatalog.ui.detail_profile
 
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,8 +50,12 @@ class DetailProfileFragment : Fragment() {
 
         activity?.findViewById<TextView>(R.id.tvTitle)?.text = username
 
-        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
+        val activity = activity as AppCompatActivity
+        activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        activity.supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#DAC0A3")))
+        
+        activity.window.statusBarColor = Color.parseColor("#DAC0A3")
+        
         return root
     }
 

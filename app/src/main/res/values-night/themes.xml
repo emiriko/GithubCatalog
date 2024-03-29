@@ -7,6 +7,10 @@
         <item name="colorOnPrimary">@color/colorPrimary</item>
         <item name = "colorPrimaryContainer"> @color/colorPrimary </item>
 
+        <item name = "colorSecondaryContainer"> @color/bottomNavIconColor </item>
+        
+        <item name = "civ_border_color"> #FF000000 </item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
