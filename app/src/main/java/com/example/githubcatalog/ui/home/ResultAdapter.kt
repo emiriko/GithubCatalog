@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.githubcatalog.data.response.ItemsItem
+import com.example.githubcatalog.data.remote.response.ItemsItem
 import com.example.githubcatalog.databinding.ItemResultBinding
 
 class ResultAdapter : ListAdapter<ItemsItem, ResultAdapter.MyViewHolder>(DIFF_CALLBACK) {

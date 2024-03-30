@@ -12,7 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubcatalog.R
-import com.example.githubcatalog.data.response.ItemsItem
+import com.example.githubcatalog.data.remote.response.ItemsItem
 import com.example.githubcatalog.databinding.FragmentRelationshipBinding
 import com.example.githubcatalog.ui.home.ResultAdapter
 

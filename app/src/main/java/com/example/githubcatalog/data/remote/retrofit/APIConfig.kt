@@ -1,4 +1,4 @@
-package com.example.githubcatalog.data.retrofit
+package com.example.githubcatalog.data.remote.retrofit
 
 import com.example.githubcatalog.BuildConfig
 import okhttp3.Interceptor
