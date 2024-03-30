@@ -69,32 +69,21 @@ class DetailProfileViewModel : ViewModel() {
             }
         }
 
-        Log.d("DetailProfileViewModel", "client: $client")
         client?.enqueue(object : Callback<List<ItemsItem>> {
             override fun onResponse(
                 call: Call<List<ItemsItem>>,
                 response: Response<List<ItemsItem>>
             ) {
                 if (response.isSuccessful) {
-                    Log.d(
-                        "DetailProfileViewModel",
-                        "response isLoding: ${_isRelationshipLoading.value}"
-                    )
                     _isRelationshipLoading.value = false
                     _relationship.value = response.body()
-                    Log.d(
-                        "DetailProfileViewModel",
-                        "response isLoding after: ${_isRelationshipLoading.value}"
-                    )
                 } else {
-                    Log.d("DetailProfileViewModel", "masukelse masuk")
                     _isRelationshipLoading.value = false
                     _snackbarText.value = Event("Failed to get data")
                 }
             }
 
             override fun onFailure(call: Call<List<ItemsItem>>, t: Throwable) {
-                Log.d("DetailProfileViewModel", "onfailure")
                 _isRelationshipLoading.value = false
                 _snackbarText.value = Event(t.message ?: "Unknown error")
             }

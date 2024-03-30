@@ -17,56 +17,56 @@ data class SearchResponse(
 data class ItemsItem(
 
     @field:SerializedName("gists_url")
-    val gistsUrl: String,
+    var gistsUrl: String? = null,
 
     @field:SerializedName("repos_url")
-    val reposUrl: String,
+    var reposUrl: String? = null,
 
     @field:SerializedName("following_url")
-    val followingUrl: String,
+    var followingUrl: String? = null,
 
     @field:SerializedName("starred_url")
-    val starredUrl: String,
+    var starredUrl: String? = null,
 
     @field:SerializedName("login")
-    val login: String,
+    var login: String? = null,
 
     @field:SerializedName("followers_url")
-    val followersUrl: String,
+    var followersUrl: String? = null,
 
     @field:SerializedName("type")
-    val type: String,
+    var type: String? = null,
 
     @field:SerializedName("url")
-    val url: String,
+    var url: String? = null,
 
     @field:SerializedName("subscriptions_url")
-    val subscriptionsUrl: String,
+    var subscriptionsUrl: String? = null,
 
     @field:SerializedName("received_events_url")
-    val receivedEventsUrl: String,
+    var receivedEventsUrl: String? = null,
 
     @field:SerializedName("avatar_url")
-    val avatarUrl: String,
+    var avatarUrl: String? = null,
 
     @field:SerializedName("events_url")
-    val eventsUrl: String,
+    var eventsUrl: String? = null,
 
     @field:SerializedName("html_url")
-    val htmlUrl: String,
+    var htmlUrl: String? = null,
 
     @field:SerializedName("site_admin")
-    val siteAdmin: Boolean,
+    var siteAdmin: Boolean? = null,
 
     @field:SerializedName("id")
-    val id: Int,
+    var id: Int? = null,
 
     @field:SerializedName("gravatar_id")
-    val gravatarId: String,
+    var gravatarId: String? = null,
 
     @field:SerializedName("node_id")
-    val nodeId: String,
+    var nodeId: String? = null,
 
     @field:SerializedName("organizations_url")
-    val organizationsUrl: String
+    var organizationsUrl: String? = null
 )

@@ -48,7 +48,6 @@ class RelationshipFragment : Fragment() {
             action = it.getString(ACTION).toString()
         }
 
-        Log.d("RelationshipFragment", "onViewCreated: $username $action")
         detailViewModel.getRelationship(username, action)
 
         val ATTRS = intArrayOf(android.R.attr.listDivider)
@@ -58,7 +57,7 @@ class RelationshipFragment : Fragment() {
         val inset = resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
         val insetDivider = InsetDrawable(divider, inset, 16, inset, 16)
         a.recycle()
-        
+
         val layoutManager = LinearLayoutManager(context)
         binding.recyclerViewRelationship.layoutManager = layoutManager
         val itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
@@ -66,7 +65,6 @@ class RelationshipFragment : Fragment() {
         binding.recyclerViewRelationship.addItemDecoration(itemDecoration)
 
         detailViewModel.relationship.observe(viewLifecycleOwner) {
-            Log.d("RelationshipFragment", "onViewCreated: $it")
             setAdapter(it)
         }
 
@@ -77,7 +75,6 @@ class RelationshipFragment : Fragment() {
     }
 
     private fun setAdapter(data: List<ItemsItem>) {
-        Log.d("RelationshipFragment", "setAdapter: $data")
         val adapter = ResultAdapter()
         adapter.submitList(data)
         binding.recyclerViewRelationship.adapter = adapter

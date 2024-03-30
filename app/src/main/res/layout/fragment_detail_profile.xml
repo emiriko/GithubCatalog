@@ -110,6 +110,20 @@
             android:layout_height="match_parent" />
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/browser"
+        android:drawableTint="?attr/colorPrimaryVariant"
+        android:text="@string/browser"
+        android:textColor="@color/colorPrimary"
+        app:backgroundTint="@color/bottomNavIconColor"
+        app:icon="@drawable/baseline_dashboard_24"
+        app:layout_constraintBottom_toTopOf="@+id/fab_favorite"
+        app:layout_constraintEnd_toEndOf="parent" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_favorite"
         android:layout_width="wrap_content"

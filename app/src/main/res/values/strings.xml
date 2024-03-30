@@ -10,4 +10,7 @@
     <string name="hello">Hello</string>
     <string name="title_settings">Setting</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="remove_favorite">Successfuly remove user from favorite.</string>
+    <string name="add_favorite">Successfuly added user to favorite.</string>
+    <string name="browser">Browser</string>
 </resources>

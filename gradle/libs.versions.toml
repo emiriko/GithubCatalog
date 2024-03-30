@@ -37,8 +37,17 @@ androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version = "1.0.0" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version = "1.5.2" }
+androidx-room = { group = "androidx.room", name = "room-runtime", version = "2.5.2" }
+androidx-roomCompiler = { group = "androidx.room", name = "room-compiler", version = "2.5.2" }
+androidx-roomKtx = { group = "androidx.room", name = "room-ktx", version = "2.4.0" }
+mockito = { group = "org.mockito", name = "mockito-core", version = "4.4.0" }
+mockito-inline = { group = "org.mockito", name = "mockito-inline", version = "4.4.0" }
+coreTesting = { group = "androidx.arch.core", name = "core-testing", version = "2.1.0" }
+androidx-runner = { group = "androidx.test", name = "runner", version = "1.5.2" }
+androidx-rules = { group = "androidx.test", name = "rules", version = "1.5.0" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+devtools-ksp = { id = "com.google.devtools.ksp", version = "1.9.0-1.0.13" }

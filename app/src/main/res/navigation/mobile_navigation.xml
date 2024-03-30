@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.example.githubcatalog.ui.favorites.FavoritesFragment"
+        android:name="com.example.githubcatalog.ui.favorites.FavoriteFragment"
         android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.example.githubcatalog.ui.setting.SettingFragment"

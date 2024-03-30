@@ -32,7 +32,6 @@ class HomeViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     _isLoading.value = false
                     _result.value = response.body()
-                    Log.d("HomeViewModel", "onResponse: ${response.body()}")
                     _snackbarText.value = Event("Success retrieving data")
                 } else {
                     _snackbarText.value = Event("Failed to get data")
