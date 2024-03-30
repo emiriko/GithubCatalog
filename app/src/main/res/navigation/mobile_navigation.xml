@@ -17,12 +17,23 @@
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.githubcatalog.ui.setting.SettingFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
         android:id="@+id/detailProfileFragment"
         android:name="com.example.githubcatalog.ui.detail_profile.DetailProfileFragment"
         android:label="fragment_detail_profile"
-        tools:layout="@layout/fragment_detail_profile">
+        tools:layout="@layout/fragment_detail_profile" >
         <action
             android:id="@+id/action_detailProfileFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_detailProfileFragment_to_navigation_favorites"
+            app:destination="@id/navigation_favorites" />
+        <action
+            android:id="@+id/action_detailProfileFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
     </fragment>
 </navigation>

@@ -1,6 +1,7 @@
 package com.example.githubcatalog.ui.detail_profile
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -15,6 +16,8 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.githubcatalog.R
 import com.example.githubcatalog.databinding.FragmentDetailProfileBinding
+import com.example.githubcatalog.ui.setting.SettingPreferences
+import com.example.githubcatalog.ui.setting.dataStore
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -52,10 +55,19 @@ class DetailProfileFragment : Fragment() {
 
         val activity = activity as AppCompatActivity
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity.supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#DAC0A3")))
+        setHasOptionsMenu(true)
         
-        activity.window.statusBarColor = Color.parseColor("#DAC0A3")
-        
+        when (context?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                activity.supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#121212")))
+                activity.window.statusBarColor = Color.parseColor("#121212")
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+                activity.supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#DAC0A3")))
+                activity.window.statusBarColor = Color.parseColor("#DAC0A3")
+            }
+        }
+
         return root
     }
 
@@ -108,5 +120,10 @@ class DetailProfileFragment : Fragment() {
                 Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
             }
         }
+    }
+    
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

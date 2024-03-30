@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        
         val ATTRS = intArrayOf(android.R.attr.listDivider)
 
         val a = requireContext().obtainStyledAttributes(ATTRS)
@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
         mainViewModel.isLoading.observe(viewLifecycleOwner) {
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
             binding.recyclerView.visibility = if (it) View.GONE else View.VISIBLE
-            binding.emptyView.visibility = if (it) View.GONE else View.VISIBLE
+            binding.emptyView.visibility = View.GONE
         }
 
         mainViewModel.snackbarText.observe(viewLifecycleOwner) {
@@ -99,7 +99,6 @@ class HomeFragment : Fragment() {
 
         adapter.setOnItemClickCallback(object : ResultAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ItemsItem) {
-                Log.d("HomeFragment", "onItemClicked: ${data.login}")
                 val detailProfileFragment = DetailProfileFragment()
 
                 val bundle = Bundle()

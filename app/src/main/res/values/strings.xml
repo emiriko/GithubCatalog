@@ -8,4 +8,6 @@
     <string name="followers">Followers</string>
     <string name="following">Following</string>
     <string name="hello">Hello</string>
+    <string name="title_settings">Setting</string>
+    <string name="dark_mode">Dark Mode</string>
 </resources>

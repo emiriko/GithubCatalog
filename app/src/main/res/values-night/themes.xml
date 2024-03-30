@@ -12,10 +12,13 @@
         <item name = "civ_border_color"> #FF000000 </item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
 
         <!-- Navigation Bottom color. -->
         <item name="bottomNavigationStyle">@style/MyBottomNavigation</item>
+
+        <!-- Search View Text -->
+        <item name="android:editTextColor">@color/colorPrimary</item>
     </style>
 
     <style name="MyBottomNavigation" parent="Widget.Design.BottomNavigationView">

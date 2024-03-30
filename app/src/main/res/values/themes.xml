@@ -15,6 +15,10 @@
 
         <!-- Bottom Nav Background. -->
         <item name="bottomNavigationStyle">@style/MyBottomNavigation</item>
+        
+        <!-- Search View Text -->
+        <item name="android:editTextColor">@color/colorPrimary</item>
+
     </style>
 
     <style name="MyBottomNavigation" parent="Widget.Design.BottomNavigationView">
