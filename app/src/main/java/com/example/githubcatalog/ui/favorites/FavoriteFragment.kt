@@ -69,14 +69,14 @@ class FavoriteFragment : Fragment() {
         }
     }
 
-    fun setAdapter(items: List<FavoriteEntity>) {
+    private fun setAdapter(items: List<FavoriteEntity>) {
         val newItems = items.map {
             ItemsItem(
                 login = it.username,
                 avatarUrl = it.avatarUrl
             )
         }
-        
+
         val adapter = ResultAdapter()
         adapter.submitList(newItems)
         binding.rvFavorite.adapter = adapter

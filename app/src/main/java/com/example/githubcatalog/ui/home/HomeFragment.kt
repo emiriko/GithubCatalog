@@ -1,12 +1,15 @@
 package com.example.githubcatalog.ui.home
 
+import android.graphics.PorterDuff
 import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
@@ -24,7 +27,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val mainViewModel by viewModels<HomeViewModel>()
-
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -72,7 +75,7 @@ class HomeFragment : Fragment() {
                 Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
             }
         }
-
+        
         with(binding) {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {

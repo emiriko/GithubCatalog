@@ -6,14 +6,18 @@ import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.addCallback
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubcatalog.R
 import com.example.githubcatalog.data.local.entity.FavoriteEntity
@@ -57,9 +61,7 @@ class DetailProfileFragment : Fragment() {
         activity?.findViewById<TextView>(R.id.tvTitle)?.text = username
 
         val activity = activity as AppCompatActivity
-        activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setHasOptionsMenu(true)
-
+        
         when (context?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
                 activity.supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#121212")))
@@ -175,7 +177,7 @@ class DetailProfileFragment : Fragment() {
             startActivity(browserIntent)
         }
     }
-
+    
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

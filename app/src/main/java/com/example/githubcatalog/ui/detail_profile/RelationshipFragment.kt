@@ -2,7 +2,6 @@ package com.example.githubcatalog.ui.detail_profile
 
 import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,9 +49,9 @@ class RelationshipFragment : Fragment() {
 
         detailViewModel.getRelationship(username, action)
 
-        val ATTRS = intArrayOf(android.R.attr.listDivider)
+        val attrs = intArrayOf(android.R.attr.listDivider)
 
-        val a = requireContext().obtainStyledAttributes(ATTRS)
+        val a = requireContext().obtainStyledAttributes(attrs)
         val divider = a.getDrawable(0)
         val inset = resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
         val insetDivider = InsetDrawable(divider, inset, 16, inset, 16)
